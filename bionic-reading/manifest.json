@@ -1,0 +1,24 @@
+{
+    "name": "Bionic Reading",
+    "description": "Converts highlighted text to Bionic Reading",
+    "version": "0.1",
+    "manifest_version": 3,
+    "host_permissions": ["https://bionic-reading1.p.rapidapi.com/convert"],
+    "permissions" : [
+        "contextMenus",
+        "tabs",
+        "scripting",
+        "declarativeContent",
+        "storage",
+        "activeTab"
+    ],
+    "background" : {
+        "service_worker" : "main.js"
+    },
+    "content_scripts" : [
+        {
+            "matches": ["https://*/*"],
+            "js" : ["content-script.js"]
+        }
+    ]
+  }
